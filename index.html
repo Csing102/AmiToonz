@@ -6,6 +6,8 @@
   <meta name="description" content="AmiToonz: Free Streaming app to watch all your favourite movies. Ad-free app download and online version available.">
   <title>AmiToonz — Free Movies Forever</title>
   <link rel="icon" href="favicon.ico">
+  <!-- Feather Icons CDN -->
+  <script src="https://unpkg.com/feather-icons"></script>
   <style>
     :root {
       --primary: #6eb5ff;
@@ -72,7 +74,9 @@
       justify-content: center;
     }
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6em;
       padding: 1em 2em;
       border-radius: 10px;
       background: linear-gradient(90deg, var(--primary) 40%, var(--secondary) 100%);
@@ -119,6 +123,12 @@
       color: #dde;
       background: none;
     }
+    .footer-icons {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.2em;
+      margin-top: 8px;
+    }
     @media (max-width: 600px) {
       header { margin: 26px auto 16px; }
       .logo { font-size: 2.2rem; }
@@ -140,8 +150,12 @@
   </header>
 
   <nav class="buttons" aria-label="Main actions">
-    <a href="https://csing102.github.io/ChrisTube-Movies/" class="btn" id="watchBtn" rel="noopener" aria-label="Watch Online (with ads)">🎬 Watch Online (with ads)</a>
-    <a href="https://1drv.ms/u/c/4cba4110b250449e/EUwBgNZ8XhRMj_CPHdJH_4oBd9AcOaZFGQRPnUr8fP4Z-A?e=JDE2o7" class="btn" id="downloadBtn" download rel="noopener" aria-label="Download App (No Ads)">⬇️ Download App (No Ads)</a>
+    <a href="https://csing102.github.io/ChrisTube-Movies/" class="btn" id="watchBtn" rel="noopener" aria-label="Watch Online (with ads)">
+      <i data-feather="play-circle"></i> Watch Online (with ads)
+    </a>
+    <a href="https://1drv.ms/u/c/4cba4110b250449e/EUwBgNZ8XhRMj_CPHdJH_4oBd9AcOaZFGQRPnUr8fP4Z-A?e=JDE2o7" class="btn" id="downloadBtn" download rel="noopener" aria-label="Download App (No Ads)">
+      <i data-feather="download"></i> Download App (No Ads)
+    </a>
   </nav>
 
   <section class="gallery" aria-label="App screenshots">
@@ -151,11 +165,19 @@
   </section>
 
   <footer>
-    <p>Made with ❤️ by Ami &amp; Chris</p>
+    <p>Made with <span style="color:var(--secondary);"><i data-feather="heart"></i></span> by Ami &amp; Chris</p>
+    <div class="footer-icons">
+      <a href="https://github.com/Csing102/AmiToonz" aria-label="GitHub Repository" target="_blank" rel="noopener"><i data-feather="github"></i></a>
+      <a href="mailto:csing102@eq.edu.au" aria-label="Contact email"><i data-feather="mail"></i></a>
+      <a href="https://twitter.com/" aria-label="Twitter profile" target="_blank" rel="noopener"><i data-feather="twitter"></i></a>
+    </div>
     <p>© 2025 AmiToonz — Free Movies Forever</p>
   </footer>
 
   <script>
+    // Feather icons initialization
+    feather.replace();
+
     // Popup/ad blocker
     (function() {
       const allowed = ["watchBtn", "downloadBtn"];
