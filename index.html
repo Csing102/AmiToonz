@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmiToonz</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      margin: 40px 0 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+
+    .tagline {
+      margin-top: 15px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff6ec7, #6eb5ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+      max-width: 1000px;
+      width: 90%;
+      margin: 30px auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      transition: transform 0.25s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>✨ AmiToonz ✨</h1>
+    <p>
+      The ultimate way to watch your favorite movies.<br>
+      <strong>Online has ads. The app? 100% ad-free.</strong>
+    </p>
+    <p class="tagline">🎉 Free Movies Forever — All Movies, Even New Movies! 🎉</p>
+  </header>
+
+  <div class="buttons">
+    <!-- Watch Online -->
+    <a href="https://csing102.github.io/ChrisTube-Movies/" class="btn" id="watchBtn">🎬 Watch Online (with ads)</a>
+
+    <!-- Download ZIP -->
+    <a href="AmiToonzInstaller.zip" class="btn" id="downloadBtn" download>⬇️ Download App (No Ads)</a>
+  </div>
+
+  <div class="gallery">
+    <img src="1.png" alt="Screenshot 1">
+    <img src="2.png" alt="Screenshot 2">
+    <img src="3.png" alt="Screenshot 3">
+  </div>
+
+  <footer>
+    <p>Made with ❤️ by Ami & Chris</p>
+    <p>© 2025 AmiToonz — Free Movies Forever</p>
+  </footer>
+
+  <script>
+    // Popup/ad blocker
+    (function() {
+      const allowed = ["watchBtn", "downloadBtn"];
+
+      // Block window.open
+      window.open = function() {
+        console.warn("Blocked popup attempt");
+        return null;
+      };
+
+      // Block right-click hijacks
+      window.oncontextmenu = e => e.preventDefault();
+
+      // Allow only watch/download buttons
+      document.addEventListener("click", (e) => {
+        const target = e.target.closest("a, button");
+        if (!target) return;
+
+        if (!allowed.includes(target.id)) {
+          e.preventDefault();
+          console.warn("Blocked unauthorized link:", target.href);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
