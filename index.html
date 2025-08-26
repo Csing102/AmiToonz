@@ -45,6 +45,11 @@
       -webkit-text-fill-color: transparent;
       display: inline-block;
     }
+    .logo-icon {
+      vertical-align: middle;
+      margin-right: 0.3em;
+      margin-left: 0.3em;
+    }
     .desc {
       font-size: 1.18rem;
       opacity: 0.88;
@@ -141,12 +146,23 @@
 </head>
 <body>
   <header>
-    <span class="logo" aria-label="AmiToonz">✨ AmiToonz ✨</span>
+    <span class="logo" aria-label="AmiToonz">
+      <i class="logo-icon" data-feather="film"></i>
+      AmiToonz
+      <i class="logo-icon" data-feather="video"></i>
+    </span>
     <div class="desc">A free streaming app to watch all your favourite movies.<br>
       <span style="font-weight: 600;">Online version has ads. The app is 100% ad-free.</span>
     </div>
-    <div class="notice">You will be taken to OneDrive to download the ZIP file. Unzip and open <strong>AmiToonz setup 1.0.0.exe</strong>.</div>
-    <div class="tagline">🎉 Free Movies Forever — All Movies, Even New Movies! 🎉</div>
+    <div class="notice">
+      <i data-feather="info"></i>
+      You will be taken to OneDrive to download the ZIP file. Unzip and open <strong>AmiToonz setup 1.0.0.exe</strong>.
+    </div>
+    <div class="tagline">
+      <i data-feather="star"></i>
+      Free Movies Forever — All Movies, Even New Movies!
+      <i data-feather="star"></i>
+    </div>
   </header>
 
   <nav class="buttons" aria-label="Main actions">
@@ -165,11 +181,19 @@
   </section>
 
   <footer>
-    <p>Made with <span style="color:var(--secondary);"><i data-feather="heart"></i></span> by Ami &amp; Chris</p>
+    <p>
+      Made with <span style="color:var(--secondary);"><i data-feather="heart"></i></span> by Ami &amp; Chris
+    </p>
     <div class="footer-icons">
-      <a href="https://github.com/Csing102/AmiToonz" aria-label="GitHub Repository" target="_blank" rel="noopener"><i data-feather="github"></i></a>
-      <a href="mailto:csing102@eq.edu.au" aria-label="Contact email"><i data-feather="mail"></i></a>
-      <a href="https://twitter.com/" aria-label="Twitter profile" target="_blank" rel="noopener"><i data-feather="twitter"></i></a>
+      <a href="https://github.com/Csing102/AmiToonz" aria-label="GitHub Repository" target="_blank" rel="noopener">
+        <i data-feather="github"></i>
+      </a>
+      <a href="mailto:csing102@eq.edu.au" aria-label="Contact email">
+        <i data-feather="mail"></i>
+      </a>
+      <a href="https://twitter.com/" aria-label="Twitter profile" target="_blank" rel="noopener">
+        <i data-feather="twitter"></i>
+      </a>
     </div>
     <p>© 2025 AmiToonz — Free Movies Forever</p>
   </footer>
